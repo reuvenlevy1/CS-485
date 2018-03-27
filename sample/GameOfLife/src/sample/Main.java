@@ -12,7 +12,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+/*
+    Creating an empty GUI
+*/
     @Override
     public void start(Stage primaryStage) throws Exception {
         AnchorPane root = FXMLLoader.load(getClass().getResource("sample.fxml"));
