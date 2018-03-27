@@ -7,3 +7,6 @@ Things you will basically need:
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 2. IntelliJ Community Edition for Java SE (don't need to subscribe):
 https://www.jetbrains.com/idea/download/#section=windows
+
+
+

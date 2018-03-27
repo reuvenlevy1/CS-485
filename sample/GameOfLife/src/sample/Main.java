@@ -49,6 +49,7 @@ public class Main extends Application {
             Rectangle border = new Rectangle(10,10);
             border.setFill(null);
             border.setStroke(Color.BLACK);
+            boolean on = false;
 
             //setAlignment(Pos.CENTER);
             getChildren().addAll(border);
@@ -56,7 +57,10 @@ public class Main extends Application {
             setOnMouseClicked(event -> {
                 if(event.getButton() == MouseButton.PRIMARY)
                 {
-                    border.setFill(Color.BLACK);
+                    if (border.getFill() == Color.BLACK)
+                        border.setFill(Color.WHITE);
+                    else
+                        border.setFill(Color.BLACK);
                 }
             });
         }
