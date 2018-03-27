@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -39,12 +40,15 @@ public class Main extends Application {
                 roots.getChildren().add(tile);
             }
         }
+
         roots.setLayoutX(40);
         roots.setLayoutY(50);
         return roots;
     }
 
     public class Tile extends StackPane{
+
+
         public Tile(){
             Rectangle border = new Rectangle(10,10);
             border.setFill(null);
@@ -52,6 +56,13 @@ public class Main extends Application {
 
             //setAlignment(Pos.CENTER);
             getChildren().addAll(border);
+
+            setOnMouseClicked(event -> {
+                if(event.getButton() == MouseButton.PRIMARY)
+                {
+                    border.setFill(Color.BLACK);
+                }
+            });
         }
     }
 
