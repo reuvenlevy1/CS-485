@@ -9,37 +9,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <MenuBar layoutX="398.0" layoutY="40.0" maxHeight="670.0" minHeight="670.0" AnchorPane.bottomAnchor="670.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Save as.." />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu mnemonicParsing="false" text="Insert">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Delete" />
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                        <MenuItem mnemonicParsing="false" text="Object1" />
+                        <MenuItem mnemonicParsing="false" text="Settings.." />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                        <MenuItem mnemonicParsing="false" text="Link" />
                         <MenuItem mnemonicParsing="false" text="About" />
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                        <MenuItem mnemonicParsing="false" text="Example" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <Button layoutX="72.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Start" />
-        <Button layoutX="161.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Stop" />
-        <Button layoutX="254.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Step" />
-        <Button layoutX="351.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Clear" />
+        <Button fx:id="start_btn" layoutX="72.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Start" />
+        <Button fx:id="stop_btn" layoutX="161.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Stop" />
+        <Button fx:id="step_btn" layoutX="254.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Step" />
+        <Button fx:id="clear_btn" layoutX="351.0" layoutY="461.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Clear" />
         <Label layoutX="72.0" layoutY="55.0" text="Resolution">
             <font>
                 <Font name="System Bold" size="14.0" />
