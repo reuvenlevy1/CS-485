@@ -66,11 +66,12 @@ public class Main extends Application {
             /*
               THIS EventHandler gets the xy position of any clicked cell.
              */
-            border.addEventHandler(MouseEvent.MOUSE_PRESSED, cell ->{
+            addEventHandler(MouseEvent.MOUSE_PRESSED, cell ->{
                 cell.getX();
                 cell.getY();
                System.out.println("Position clicked: "+"X: "+cell.getX()+" Y: "+cell.getY());
             });
+
 
             setOnMouseClicked(event -> {
                 if(event.getButton() == MouseButton.PRIMARY)
