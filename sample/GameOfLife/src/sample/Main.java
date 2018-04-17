@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -12,9 +13,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-/*
-    Creating an empty GUI
-*/
+    /*
+        Creating an empty GUI
+    */
     @Override
     public void start(Stage primaryStage) throws Exception {
         AnchorPane root = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -31,7 +32,7 @@ public class Main extends Application {
         for (int i = 0; i< 35; i++)
         {
             for(int j = 0; j<70; j++){
-                Tile tile = new Tile();
+                Tile tile = new Tile(j,i);
                 tile.setTranslateX(j*10);
                 tile.setTranslateY(i*10);
 
@@ -45,27 +46,59 @@ public class Main extends Application {
     }
 
     public class Tile extends StackPane{
+        private int x;
+        private int y;
+        private boolean on = true;
 
 
-        public Tile(){
+        public Tile(int x, int y){
+            this.x = x;
+            this.y = y;
             Rectangle border = new Rectangle(10,10);
             border.setFill(null);
             border.setStroke(Color.BLACK);
-            boolean on = false;
+
 
             //setAlignment(Pos.CENTER);
             getChildren().addAll(border);
 
+
+            /*
+              THIS EventHandler gets the xy position of any clicked cell.
+             */
+            border.addEventHandler(MouseEvent.MOUSE_PRESSED, cell ->{
+                cell.getX();
+                cell.getY();
+               System.out.println("Position clicked: "+"X: "+cell.getX()+" Y: "+cell.getY());
+            });
+
             setOnMouseClicked(event -> {
                 if(event.getButton() == MouseButton.PRIMARY)
                 {
-                    if (border.getFill() == Color.BLACK)
+                    if (border.getFill() == Color.BLACK){
                         border.setFill(Color.WHITE);
-                    else
+                        setOnFalse();
+                       // System.out.println("Cell Dead =: ");
+
+                    }
+                    else{
+                        setOnTrue();
                         border.setFill(Color.BLACK);
+                      //  System.out.println("Cell Alive =:");
+                    }
+
                 }
             });
         }
+
+        public int getPositionX(){return x;}
+
+        public int getPositionY(){return y;}
+
+        public void setOnFalse(){on = false;}
+
+        public void setOnTrue(){on = true;}
+
     }
 
     public static void main(String[] args) {
