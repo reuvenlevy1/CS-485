@@ -67,9 +67,9 @@ public class Main extends Application {
               THIS EventHandler gets the xy position of any clicked cell.
              */
             addEventHandler(MouseEvent.MOUSE_PRESSED, cell ->{
-                cell.getX();
-                cell.getY();
-               System.out.println("Position clicked: "+"X: "+cell.getX()+" Y: "+cell.getY());
+                double x_coord = getPositionX();
+                double y_cord  = getPositionY();
+               System.out.println("Position clicked: "+"X: "+getPositionX()+" Y: "+getPositionY());
             });
 
 
